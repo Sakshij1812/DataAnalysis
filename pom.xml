@@ -25,7 +25,7 @@
         </dependency>
 
 
-        <!-- https://github.com/twitter/hbc -->
+       
         <dependency>
             <groupId>com.twitter</groupId>
             <artifactId>hbc-core</artifactId>

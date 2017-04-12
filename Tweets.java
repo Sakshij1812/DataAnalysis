@@ -16,19 +16,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 class Tweets {
     public static void main(String args[]) throws InterruptedException {
 
-
-        // Create a local StreamingContext with two working thread and batch interval of 1 second
-        /*SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("DataAnalysis");
-        JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(1));
-
-        // Create a DStream that will connect to hostname:port, like localhost:9999
-        JavaReceiverInputDStream<String> lines = jssc.socketTextStream("localhost", 9999); */
-
-        //org.apache.log4j.BasicConfigurator.configure();
-
-
-
-
         BlockingQueue<String> queue = new LinkedBlockingQueue<String>(10000);
         StatusesFilterEndpoint endpoint = new StatusesFilterEndpoint();
         endpoint.trackTerms(Lists.newArrayList("Microsoft"));
@@ -52,13 +39,6 @@ class Tweets {
 
            System.out.println(msg);
 
-
-           /* JavaDStream<String> filteredMsg = lines.filter(new Function<String, Boolean>() {
-                public Boolean call(String line) {
-                    return line.contains("text");
-                } */
-
-            //get("/bye", (req, res) -> (msg+"\n"));
         }
             client.stop();
 
